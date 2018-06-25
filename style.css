@@ -1,0 +1,57 @@
+/*
+Theme Name: 寂静生长
+Theme URI: http://istimer.com
+Description: It's a theme create by axin
+Version: 1.0
+Author: axin
+Author URI: http://gjx.app
+Tags: custom header, fixed width, two columns, widgets
+*/
+
+#bg {
+    background-image: url("./image/bg0.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+#center{
+    position: absolute;
+    top:50%;
+    left: 33%;
+    margin-top: -320px;
+}
+
+#left{
+    position: absolute;
+    top:50%;
+    left: -280px;
+    height: 480px;
+    width: 280px;
+    margin-top: -240px;
+    text-align: center;
+    color:white;
+    padding: 20px;
+
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    -moz-border-radius-topright:25px;
+    -moz-border-radius-bottomright:25px;
+    background: #000;
+    opacity:0.5;
+}
+
+#menu{
+    position: absolute;
+    bottom:-120px;
+    left: 50%;
+    width: 640px;
+    height: 120px;
+    margin-left: -320px;
+    text-align: center;
+    color:white;
+
+    background: #000;
+    opacity:0.5;
+}
