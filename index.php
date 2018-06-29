@@ -22,68 +22,28 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body id="bg">
 <div id="left">
-    <h4>这里是个人的简介信息</h4>
-    <h4>这里是个人的简介信息</h4>
-    <h4>这里是个人的简介信息</h4>
-    <h4>这里是个人的简介信息</h4>
-    <h4>这里是个人的简介信息</h4>
-    <h4>这里是个人的简介信息</h4>
+    <div class="member">
+
+    </div>
 </div>
 <div id="center">
     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/image/bg-text.png" width="240px">
     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/image/bg-logo.png" height="640px">
 </div>
-<div id="menu">
-
+<div id="bottom">
+    <a class="menu-button" href="#">LOGO</a>
+    <a class="menu-button" href="#">海报</a>
+    <a class="menu-button" href="#">宣传册</a>
+    <a class="menu-button" href="#">名片</a>
+    <a class="menu-button" href="#">包装盒</a>
+    <a class="menu-button" href="#">其他</a>
 </div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/bootstrap/js/bootstrap.min.js"></script>
 <script>
-    var center = $('#center');
-    function jianjie(open) {
-        var obj = $('#left');
-        if (open) {
-            obj.animate({left:'0px'}, 300);
-            center.animate({left:'35%'}, 300)
-        } else {
-            obj.animate({left:'-280px'}, 300);
-            center.animate({left:'33%'}, 300)
-        }
-    }
-
-
-
-    function menu(open) {
-        var obj = $('#menu');
-        if (open) {
-            obj.animate({bottom:'0px'}, 300);
-            center.animate({'margin-top':'-360px'}, 300)
-        } else {
-            obj.animate({bottom:'-120px'}, 300);
-            center.animate({'margin-top':'-320px'}, 300)
-        }
-    }
-
-
-    $(document).mousemove(function(e) {
-        e = e || window.event
-        var p = 10
-        var __xx = parseInt(e.pageX || e.clientX);
-        var __yy = parseInt(e.pageY || e.clientY);
-
-        if (!__xx || __xx < p) {
-            jianjie(true);
-        }
-
-        var offset = parseInt($('#menu').css('bottom'));
-        var hd = $(document).height() + (offset > 0 ? 0 : offset);
-
-        if (!__yy || hd-__yy < p) {
-            menu(true);
-        }
-    });
 </script>
 </html>

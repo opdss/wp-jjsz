@@ -24,78 +24,62 @@
   </head>
   <body id="bg">
   <div id="left">
-    <h4>这里是个人的简介信息</h4>
-    <h4>这里是个人的简介信息</h4>
-    <h4>这里是个人的简介信息</h4>
-    <h4>这里是个人的简介信息</h4>
-    <h4>这里是个人的简介信息</h4>
-    <h4>这里是个人的简介信息</h4>
+    <div class="member">
+      <div class="li">
+        <img src="image/menu-on.png" style="width: 80px">
+      </div>
+      <div class="li">
+        <div class="limit">|</div>
+        <div><div class="left">1995.06.21</div><div class="clear"></div></div>
+        <div class="limit">|</div>
+        <div><div class="right">江西吉安</div><div class="clear"></div></div>
+        <div class="limit">|</div>
+        <div><div class="left">平面/网页设计师</div><div class="clear"></div></div>
+        <div class="limit">|</div>
+        <div><div class="right">18802618464</div><div class="clear"></div></div>
+        <div class="limit">|</div>
+        <div><div class="left">广东深圳</div><div class="clear"></div></div>
+        <div class="limit">|</div>
+      </div>
+      <div class="li">
+        这里是自我介绍<br/>
+        这里是自我介绍<br/>
+        这里是自我介绍<br/>
+        这里是自我介绍<br/>
+        这里是自我介绍<br/>
+
+      </div>
+    </div>
   </div>
   <div id="center">
     <img src="image/bg-text.png" width="240px">
     <img src="image/bg-logo.png" height="640px">
   </div>
-  <div id="menu">
-
+  <div id="bottom">
+        <a class="menu-button" href="#">LOGO</a>
+        <a class="menu-button" href="#">海报</a>
+        <a class="menu-button" href="#">宣传册</a>
+        <a class="menu-button" href="#">名片</a>
+        <a class="menu-button" href="#">包装盒</a>
+        <a class="menu-button" href="#">其他</a>
   </div>
   </body>
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
   <script src="./bootstrap/js/bootstrap.min.js"></script>
   <script>
-    var leftOpen = false;
-    var center = $('#center');
-        function jianjie(open) {
-            var obj = $('#left');
-            if (open) {
-                obj.animate({left:'0px'}, 300);
-                center.animate({left:'35%'}, 300)
-            } else {
-                obj.animate({left:'-280px'}, 300);
-                center.animate({left:'33%'}, 300)
-            }
+    var m = [];
+    function centerMove(t, d) {
+        console.log(t,d);
+        var center = $('#center');
+        if (t) {
+            d ? center.filter(':not(:animated)').animate({left:'35%'}, 300) : center.filter(':not(:animated)').animate({'margin-top':'-360px'}, 300);
+        } else {
+            d ? center.filter(':not(:animated)').animate({left:'33%'}, 300) : center.filter(':not(:animated)').animate({'margin-top':'-320px'}, 300);
         }
-
-
-
-        function menu(open) {
-            var obj = $('#menu');
-            if (open) {
-                obj.animate({bottom:'0px'}, 300);
-                center.animate({'margin-top':'-360px'}, 300)
-            } else {
-                obj.animate({bottom:'-120px'}, 300);
-                center.animate({'margin-top':'-320px'}, 300)
-            }
-        }
-
-        $(document).mousemove(function(e) {
-            e = e || window.event
-            var p = 10
-            var __xx = parseInt(e.pageX || e.clientX);
-            var __yy = parseInt(e.pageY || e.clientY);
-
-            if (!__xx || __xx < p) {
-                jianjie(true);
-            } else {
-                if (leftOpen) {
-                    jianjie(false);
-                }
-            }
-
-            var offset = parseInt($('#menu').css('bottom'));
-            var hd = $(document).height() + (offset > 0 ? 0 : offset);
-
-            if (!__yy || hd-__yy < p) {
-                menu(true);
-            } else {
-                menu(false);
-            }
-        });
-    $('#left').mouseover(function () {
-        leftOpen = true;
-    });
-    $('#left').mouseout(function () {
-        leftOpen = false;
-    });
+    }
+    $('#left').mouseover(function(){centerMove(1, 1)});
+    $('#left').mouseout(function(){centerMove(0, 1)});
+    $('#bottom').mouseover(function(){centerMove(1, 0)});
+    $('#bottom').mouseout(function(){centerMove(0, 0)});
   </script>
 </html>
