@@ -119,3 +119,29 @@ Tags: custom header, fixed width, two columns, widgets
 .clear{
   clear:both;
 }
+
+/*list.html*/
+
+.list-block {
+  margin: 20px;
+  padding:10px;
+  display: block;
+  background: white;
+  min-height: 240px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.list-block:hover{
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.list-nav li{
+  border-bottom: 5px;
+}
+
+
+.list-nav li.active, .list-nav li:hover{
+  /*font-weight: bold;*/
+  color:#000000;
+  border-bottom: 5px solid #000;
+}
