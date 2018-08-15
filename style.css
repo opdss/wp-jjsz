@@ -8,6 +8,50 @@ Author URI: http://gjx.app
 Tags: custom header, fixed width, two columns, widgets
 */
 
+.container {
+    max-width: 900px;
+}
+
+a{
+    color: #777;
+}
+a:hover {
+    color: red;
+    background: white;
+}
+.active>a{
+    color: red;
+}
+
+/*** head  start***/
+.user-qr{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    background-size: 100% 100%;
+    background-image: url("./image/user-0.png");
+}
+.user-qr:hover {
+    background-image: url("./image/user-1.png");
+}
+#search_box {
+    border-radius: 20px;
+}
+
+.navbar-menu > li > a {
+    padding-bottom: 10px;
+}
+.navbar-menu > li >a:hover{
+    background: white;
+}
+.navbar-menu > li:hover{
+    border-bottom: 5px solid red;
+}
+.navbar-menu > li.active{
+    border-bottom: 5px solid red;
+}
+/*** head  end***/
+
 @keyframes index-tools
 {
     from {box-shadow: none;}
@@ -36,18 +80,21 @@ Tags: custom header, fixed width, two columns, widgets
 .index-tool-box-1:hover
 {
     background-image: url("./image/t1-1.png");
+    background-size: 100% 100%;
     animation: index-tools 0.3s;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, .2) inset;
 }
 .index-tool-box-2:hover
 {
     background-image: url("./image/t2-1.png");
+    background-size: 100% 100%;
     animation: index-tools 0.3s;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, .2) inset;
 }
 .index-tool-box-3:hover
 {
     background-image: url("./image/t3-1.png");
+    background-size: 100% 100%;
     animation: index-tools 0.3s;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, .2) inset;
 }
@@ -56,14 +103,17 @@ Tags: custom header, fixed width, two columns, widgets
 .index-tool-box-1
 {
     background-image: url("./image/t1-0.png");
+    background-size: 100% 100%;
 }
 .index-tool-box-2
 {
     background-image: url("./image/t2-0.png");
+    background-size: 100% 100%;
 }
 .index-tool-box-3
 {
     background-image: url("./image/t3-0.png");
+    background-size: 100% 100%;
 }
 
 /**************************/
