@@ -41,27 +41,7 @@
                         </span>
                     </div>-->
                     <div class="col-md-12">
-                        <nav class="navbar" style="margin-bottom: 0px;">
-                                <div class="navbar-header">
-                                    <a class="navbar-brand" href="#">HI,欢迎来到寂静生长！</a>
-                                </div>
-                                <!-- Note that the .navbar-collapse and .collapse classes have been removed from the #navbar -->
-                                <div>
-                                    <ul class="nav navbar-nav navbar-menu">
-                                        <li class="active"><a href="#">Home</a></li>
-                                        <li><a href="#about">About</a></li>
-                                        <li><a href="#contact">Contact</a></li>
-                                    </ul>
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li><div class="user-qr"></div></li>
-                                    </ul>
-                                    <form class="navbar-form navbar-right">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Search" id="search_box">
-                                        </div>
-                                    </form>
-                                </div><!--/.nav-collapse -->
-                        </nav>
+                        <?php echo get_header()?>
                     </div>
                 </div>
                 <div class="row">
@@ -81,9 +61,9 @@
             <div class="col-md-12">
                 <div class="navbar ">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">工具箱</a></li>
+                        <li><a href="#about">知言笔记</a></li>
+                        <li><a href="#contact">中国古诗词</a></li>
                     </ul>
                 </div>
             </div>
