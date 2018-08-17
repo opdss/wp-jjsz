@@ -5,7 +5,7 @@
 	</div>
 	<!-- Note that the .navbar-collapse and .collapse classes have been removed from the #navbar -->
 	<div>
-        <?php var_dump(get_post_format());if(1): ?>
+        <?php if(/*!is_home()*/1): ?>
 		<ul class="nav navbar-nav navbar-menu">
 			<?php
 			$metro_creativex_terms = get_categories();

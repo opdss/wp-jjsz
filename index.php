@@ -32,29 +32,35 @@
         <div class="row">
             <div class="col-md-12"  style="box-shadow: 0px 0px 20px rgba(0,0,0,.3)">
                 <div class="row">
-                    <!--<div class="col-md-6">
-                        <h3>HI, 欢迎来到我的站点！</h3>
-                    </div>
-                    <div class="col-md-6 text-right">
-                        <span>
-                            <img class="user-qr" src="<?php /*echo esc_url( get_template_directory_uri() ); */?>/image/user-0.png" style="width: 32px;margin: 10px;">
-                        </span>
-                    </div>-->
                     <div class="col-md-12">
                         <?php echo get_header()?>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12"
-                         style="background: url('<?php echo esc_url( get_template_directory_uri() ); ?>/image/index-bg.png') no-repeat;background-size:100% 100%;min-height: 400px">
+                <?php if (is_home()): ?>
+                    <!--<div class="row">
+                        <div class="col-md-12"
+                             style="background: url('<?php /*echo esc_url( get_template_directory_uri() ); */?>/image/index-bg.png') no-repeat;background-size:100% 100%;min-height: 400px">
 
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <a href="#" class="col-md-4 index-tool-box index-tool-box-1"></a>
-                    <a href="#" class="col-md-4 index-tool-box index-tool-box-2"></a>
-                    <a href="#" class="col-md-4 index-tool-box index-tool-box-3"></a>
-                </div>
+                    <div class="row">
+                        <a href="#" class="col-md-4 index-tool-box index-tool-box-1"></a>
+                        <a href="#" class="col-md-4 index-tool-box index-tool-box-2"></a>
+                        <a href="#" class="col-md-4 index-tool-box index-tool-box-3"></a>
+                    </div>-->
+                <?php elseif(is_search()): ?>
+                <?php else: ?>
+                    <?php if(have_posts()):?>
+                        <?php
+                        $cat = get_the_category();$slug = $cat[0]->slug;
+                        while ( have_posts() ) {
+							the_post();
+							//var_dump($slug);
+							get_template_part('content', $slug);
+						}; ?>
+                        <?php //metro_creativex_pagination(); ?>
+                    <?php endif ?>
+                <?php endif ?>
             </div>
         </div>
         <div class="row" style="margin-top: 40px;border-top: 1px solid #ddd"">
@@ -68,13 +74,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <footer>
-                    <p class="text-muted">© 2018 寂静生长 — <a href="http://www.miibeian.gov.cn/">粤ICP备18038279号</a></p>
-                </footer>
-            </div>
-        </div>
+        <?php get_footer();?>
     </div>
 </body>
 
