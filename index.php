@@ -33,13 +33,33 @@
             <div class="col-md-12"  style="box-shadow: 0px 0px 20px rgba(0,0,0,.3)">
                 <div class="row">
                     <div class="col-md-12">
-                        <?php echo get_header()?>
+                        <nav class="navbar" style="margin-bottom: 0px;">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="#">HI,欢迎来到寂静生长！</a>
+                            </div>
+                            <!-- Note that the .navbar-collapse and .collapse classes have been removed from the #navbar -->
+                            <div>
+								<?php if(/*!is_home()*/1): ?>
+                                    <ul class="nav navbar-nav navbar-menu">
+                                        <li><a href="#">文字</a></li>
+                                    </ul>
+								<?php endif;?>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><div class="user-qr"></div></li>
+                                </ul>
+                                <form class="navbar-form navbar-right" method="get">
+                                    <div class="form-group search-box" >
+                                        <input type="text" class="form-control" placeholder="Search" name="kw">
+                                        <a class="search-logo" href="javascript:void(0)"><span class="glyphicon glyphicon-search"></span> </a>
+                                    </div>
+                                </form>
+                            </div><!--/.nav-collapse -->
+                        </nav>
                     </div>
                 </div>
-                <?php if (is_home()): ?>
-                    <!--<div class="row">
+                    <div class="row">
                         <div class="col-md-12"
-                             style="background: url('<?php /*echo esc_url( get_template_directory_uri() ); */?>/image/index-bg.png') no-repeat;background-size:100% 100%;min-height: 400px">
+                             style="background: url('<?php echo esc_url( get_template_directory_uri() ); ?>/image/index-bg.png') no-repeat;background-size:100% 100%;min-height: 400px">
 
                         </div>
                     </div>
@@ -47,20 +67,7 @@
                         <a href="#" class="col-md-4 index-tool-box index-tool-box-1"></a>
                         <a href="#" class="col-md-4 index-tool-box index-tool-box-2"></a>
                         <a href="#" class="col-md-4 index-tool-box index-tool-box-3"></a>
-                    </div>-->
-                <?php elseif(is_search()): ?>
-                <?php else: ?>
-                    <?php if(have_posts()):?>
-                        <?php
-                        $cat = get_the_category();$slug = $cat[0]->slug;
-                        while ( have_posts() ) {
-							the_post();
-							//var_dump($slug);
-							get_template_part('content', $slug);
-						}; ?>
-                        <?php //metro_creativex_pagination(); ?>
-                    <?php endif ?>
-                <?php endif ?>
+                    </div>
             </div>
         </div>
         <div class="row" style="margin-top: 40px;border-top: 1px solid #ddd"">
